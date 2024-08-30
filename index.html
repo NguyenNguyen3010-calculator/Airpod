@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirPods Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: url('https://www.apple.com/newsroom/images/product/airpods/standard/Apple-AirPods-Pro-2nd-gen-hero-220907_big.jpg.large.jpg') no-repeat center center/cover;
+            color: #ffffff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Header Section */
+        header {
+            background: url('https://www.apple.com/newsroom/images/product/airpods/standard/Apple-AirPods-Pro-2nd-gen-hero-220907_big.jpg.large.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            padding-top: 60px;
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        header h1 {
+            font-size: clamp(3rem, 5vw, 4.5rem);
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.8em;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            font-weight: 600;
+            text-transform: uppercase;
+            background-color: #007aff;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .btn:hover {
+            background-color: #005bb5;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9); /* Light background to contrast with text */
+            color: #333;
+            position: relative;
+            z-index: 1;
+        }
+
+        .features h2 {
+            font-size: 2.8em;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #007aff;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #007aff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .features-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+            justify-content: center;
+        }
+
+        .feature-item {
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            padding: 40px;
+            flex: 1 1 300px;
+            max-width: 350px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-item h3 {
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            color: #007aff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-item p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.6em;
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 80px 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Light background to contrast with text */
+            text-align: center;
+        }
+
+        .video-section h2 {
+            font-size: 2.8em;
+            font-weight: 600;
+            color: #007aff;
+            margin-bottom: 30px;
+        }
+
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-container video {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .video-container video:hover {
+            transform: scale(1.05);
+        }
+
+        .video-container h3 {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ffffff;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+
+        /* Parallax Section with Enhanced Effects */
+        .parallax {
+            background: url('https://media.wired.com/photos/632b71c4f1e5c40d2b1bc705/191:100/w_1280,c_limit/AirPods-Pro-2nd-Gen-Gear.jpg') no-repeat center center/cover;
+            height: 500px;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-attachment: fixed;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px;
+            border-bottom: 5px solid #007aff;
+        }
+
+        .parallax::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 3;
+            filter: blur(10px);
+        }
+
+        .parallax h2 {
+            position: relative;
+            z-index: 4;
+            font-size: clamp(2.5rem, 5vw, 4em);
+            text-align: center;
+            color: #ffffff;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            animation: slideIn 2s ease-in-out;
+            padding: 30px;
+            background: rgba(0, 122, 255, 0.8);
+            border-radius: 30px;
+            box-shadow: 0 6px 30px rgba(0, 122, 255, 0.4);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .parallax h2:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 40px rgba(0, 122, 255, 0.6);
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Additional Information Section */
+        .additional-info {
+            padding: 80px 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .additional-info h2 {
+            font-size: 2.8em;
+            font-weight: 600;
+            color: #007aff;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #007aff;
+        }
+
+        .info-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .info-item {
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            flex: 1 1 300px;
+            max-width: 350px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-item img {
+            width: 100%;
+            height: auto;
+            border-bottom: 2px solid #007aff;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .info-item img:hover {
+            transform: scale(1.05);
+        }
+
+        .info-item h3 {
+            font-size: 1.6em;
+            color: #007aff;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-item p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.6em;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #007aff;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>AirPods Pro</h1>
+        <p>Experience the ultimate sound quality with next-level noise cancellation and superior design.</p>
+        <a href="#" class="btn">Buy Now</a>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>Key Features</h2>
+        <div class="features-container">
+            <div class="feature-item">
+                <h3>Advanced Noise Cancellation</h3>
+                <p>Block out the world and immerse yourself in your music with our state-of-the-art noise cancellation technology.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Superior Sound Quality</h3>
+                <p>Enjoy deep bass, rich mids, and crisp highs, delivering a listening experience like no other.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Comfort and Style</h3>
+                <p>Designed to fit comfortably in your ears with a sleek, modern design that looks as good as it feels.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section for Advanced Features -->
+    <section class="video-section">
+        <h2>See AirPods Pro in Action</h2>
+        <div class="video-container">
+            <video autoplay loop muted playsinline>
+                <source src="https://www.apple.com/newsroom/videos/pods-audio/large_2x.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h3>Customizable Sound</h3>
+        </div>
+        <div class="video-container">
+            <video autoplay loop muted playsinline>
+                <source src="https://www.apple.com/newsroom/videos/h2-chip-pods/large_2x.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h3>H2 Chip Technology</h3>
+        </div>
+        <div class="video-container">
+            <video autoplay loop muted playsinline>
+                <source src="https://www.apple.com/newsroom/videos/pods-volume/large_2x.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h3>AirPods Case Design</h3>
+        </div>
+    </section>
+
+    <!-- Parallax Section with Enhanced Effects -->
+    <div class="parallax">
+        <h2>Feel the Sound</h2>
+    </div>
+
+    <!-- Additional Information Section -->
+    <section class="additional-info">
+        <h2>More Details</h2>
+        <div class="info-container">
+            <div class="info-item">
+                <img src="https://www.apple.com/newsroom/images/product/airpods/standard/Apple-AirPods-Pro-2nd-gen-silicon-ear-tips-220907_big.jpg.large.jpg" alt="Ear Tips">
+                <h3>Custom Ear Tips</h3>
+                <p>Available in different sizes to ensure the perfect fit and comfort for every user.</p>
+            </div>
+            <div class="info-item">
+                <img src="https://www.apple.com/newsroom/images/product/airpods/standard/Apple-AirPods-Pro-2nd-gen-iPhone-14-Pro-2up-Spatial-Audio-220907_inline.jpg.large.jpg" alt="Spatial Sound">
+                <h3>Spatial Audio</h3>
+                <p>Immerse yourself in a theater-like experience with spatial audio that brings your music to life.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Apple Inc. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
